@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
@@ -22,3 +23,6 @@
   --semantic-error: #DC2626;
 }
 
+body {
+  overflow: hidden;
+}

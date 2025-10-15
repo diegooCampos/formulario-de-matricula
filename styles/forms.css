@@ -41,3 +41,7 @@ input[type="date"] {
 select {
   background: url(../assets/icons/arrow-down-01.svg) no-repeat calc(100% - 1rem); /* ajuste de tamanho através do calc*/
 }
+
+fieldset + fieldset {
+  margin-top: 3rem;
+}

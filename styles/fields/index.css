@@ -45,4 +45,32 @@ input {
     color: var(--text-primary);
     border: 1px solid var(--stroke-default);
   }
+
+  &:invalid {
+    border: .125rem solid var(--semantic-error);
+    margin-bottom: .25rem;
+  }
+
+  & + small {
+    font: var(--text-sm);
+    color: #78716C;
+
+    display: inline-block; /* para respeitar o margin-top, pois o small tem por padrao o display: inline*/
+    margin-top: .25rem;
+  }
+
+  &[required] + .error {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+
+    font: var(--text-sm);
+    color: var(--semantic-error);
+
+    margin-top: .25rem;
+  }
+
+  &:not(:focus):valid + .error {
+    display: none;
+  }
 }

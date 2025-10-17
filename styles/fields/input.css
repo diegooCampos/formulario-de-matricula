@@ -1,0 +1,74 @@
+input, textarea, select {
+  appearance: none;
+  width: 100%;
+
+  border-radius: .5rem;
+  border: 1px solid var(--stroke-default);
+
+  padding: .75rem 1rem;
+
+  font: var(--text);
+}
+
+label {
+  font: var(--text-sm);
+  color: var(--text-secondary);
+
+  display: block;
+  margin-bottom: .25rem;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+input[type="date"]:focus-within { /* input[type="date"]:focus-within - focus no elemento dentro do input date */
+  outline: .25rem solid var(--surface-secondary); /* quando focado */
+  border: .125rem solid var(--stroke-highlight);
+  outline-offset: .1px;
+}
+
+.address .flex {
+  gap: 1.25rem;
+}
+
+.input-wrapper:has([disabled]) {
+  opacity: .5;
+}
+
+
+input {
+  &[disabled] {
+    background-color: var(--surface-disabled);
+
+    color: var(--text-primary);
+    border: 1px solid var(--stroke-default);
+  }
+
+  &:invalid {
+    border: .125rem solid var(--semantic-error);
+    margin-bottom: .25rem;
+  }
+
+  & + small {
+    font: var(--text-sm);
+    color: #78716C;
+
+    display: inline-block; /* para respeitar o margin-top, pois o small tem por padrao o display: inline*/
+    margin-top: .25rem;
+  }
+
+  &[required] + .error {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+
+    font: var(--text-sm);
+    color: var(--semantic-error);
+
+    margin-top: .25rem;
+  }
+
+  &:not(:focus):valid + .error {
+    display: none;
+  }
+}
